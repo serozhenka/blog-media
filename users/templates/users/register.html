@@ -9,12 +9,11 @@
             {% csrf_token %}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Join Today</legend>
-{#                {{ form|crispy }}#}
 
                 {% for field in form %}
                     <div class="fieldWrapper mb-3">
-{#                        {{ field.errors }}#}
-                         {{ field.label }}{{ field|as_crispy_field }}
+                        <div class="mb-1">{{ field.label }}</div>
+                        <div>{{ field|as_crispy_field }}</div>
                     </div>
                 {% endfor %}
             </fieldset>
@@ -24,7 +23,7 @@
             </div>
 
             <div class="border-top pt-2" style="text-align: center">
-                <small class="mt-3">Already have an account? <a class="" href="#">Sign in</a></small>
+                <small class="mt-3">Already have an account? <a class="td-none" href="{% url 'login' %}">Sign in</a></small>
             </div>
         </form>
     </div>
