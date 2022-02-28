@@ -85,3 +85,11 @@ a.article-title:hover {
   float: left;
   margin-right: 20px;
 }
+
+.link-color {
+  color: #5f788a;
+}
+
+.link-color:hover {
+  color: #484d50 !important;
+}
