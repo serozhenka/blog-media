@@ -5,6 +5,9 @@ from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
 
 def register(request):
+    if request.user.is_authenticated:
+        return redirect('blog-home')
+
     if request.method == "GET":
         form = UserRegisterForm()
     elif request.method == "POST":
